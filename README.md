@@ -15,11 +15,11 @@
     <td>自身</td>
   </tr>
   <tr>
-    <td>\0</td>
+    <td>\0(不重要)</td>
     <td>NUL字符(\u0000)</td>
   </tr>
   <tr>
-    <td>\t</td>
+    <td>\t(不重要)</td>
     <td>制表符(\u0009)</td>
   </tr>
   <tr>
@@ -27,27 +27,27 @@
     <td>换行符(\u000A)</td>
   </tr>
   <tr>
-    <td>\v</td>
+    <td>\v(不重要)</td>
     <td>垂直制表符(\u000B)</td>
   </tr>
   <tr>
-    <td>\f</td>
+    <td>\f(不重要)</td>
     <td>换页符(\u000C)</td>
   </tr>
   <tr>
-    <td>\r</td>
+    <td>\r(不重要)</td>
     <td>回车符(\u000D)</td>
   </tr>
   <tr>
-    <td>\xnn</td>
+    <td>\xnn(不重要)</td>
     <td>由十六进制数nn指定的拉丁字符，例如，\x0A等价于\n</td>
   </tr>
   <tr>
-    <td>\uxxxx</td>
+    <td>\uxxxx(不重要)</td>
     <td>由十六进制数xxxx指定的Unicode字符，例如\u0009等价于\t</td>
   </tr>
   <tr>
-    <td>\cX</td>
+    <td>\cX(不重要)</td>
     <td>控制字符^X，例如\cJ等价于换行符\n</td>
   </tr>
 </table>
@@ -58,11 +58,11 @@
     <td>匹配</td>
   </tr>
   <tr>
-    <td>[...](重要)</td>
+    <td>[...]</td>
     <td>方括号内的任意字符</td>
   </tr>
   <tr>
-    <td>[^...](重要)</td>
+    <td>[^...]</td>
     <td>不在方括号内的任意字符</td>
   </tr>
 </table>
@@ -73,35 +73,35 @@
     <td>匹配</td>
   </tr>
   <tr>
-    <td>.(重要)</td>
+    <td>.</td>
     <td>除换行符和其他Unicode行终止符之外的任意字符</td>
   </tr>
   <tr>
-    <td>\w(重要)</td>
+    <td>\w</td>
     <td>任何ASCII字符组成的单词，等价于[a-zA-Z0-9_]</td>
   </tr>
   <tr>
-    <td>\W(重要)</td>
+    <td>\W</td>
     <td>任何不是ASCII字符组成的单词，等价于[^a-zA-Z0-9_]</td>
   </tr>
   <tr>
-    <td>\s(重要)</td>
+    <td>\s</td>
     <td>任何Unicode空白符</td>
   </tr>
   <tr>
-    <td>\S(重要)</td>
+    <td>\S</td>
     <td>任何非Unicode空白符的字符，注意\w和\S不同</td>
   </tr>
   <tr>
-    <td>\d(重要)</td>
+    <td>\d</td>
     <td>任何ASCII数字，等价于[0-9]</td>
   </tr>
   <tr>
-    <td>\D(重要)</td>
+    <td>\D</td>
     <td>除了ASCII数字之外的任何字符，等价于[^0-9]</td>
   </tr>
   <tr>
-    <td>[\b]</td>
+    <td>[\b](不重要)</td>
     <td>退格直接量</td>
   </tr>
 </table>
