@@ -3,7 +3,7 @@
 2. 特殊字符 \,^,$,*,+,?,.,(x),(?:x),x(?=y),x(?!y),x|y,{n},{n,m},[xyz],[^xyz], 
       [\b],\b,\B,\cX,\d,\D,\f,\n,\r,\s,\S,\t,\v,\w,\W,\n,\0,\xhh,\uhhhh,\u{hhhh}
       
-
+# regex
 ### 直接量字符
 <table>
   <tr>
@@ -105,4 +105,110 @@
     <td>退格直接量</td>
   </tr>
 </table>
-#
+### 重复
+<table>
+  <tr>
+    <td>字符</td>
+    <td>含义</td>
+  </tr>
+  <tr>
+    <td>{n,m}</td>
+    <td>匹配前一项至少n次，但不能超过m次</td>
+  </tr>
+  <tr>
+    <td>{n,}</td>
+    <td>匹配前一项n次或者更多次</td>
+  </tr>
+  <tr>
+    <td>{n}</td>
+    <td>匹配前一项n次</td>
+  </tr>
+  <tr>
+    <td>?</td>
+    <td>匹配前一项0次或者1次，也就是说前一项是可选的，等价于{0,1}</td>
+  </tr>
+  <tr>
+    <td>+</td>
+    <td>匹配前一项1次或多次，等价于{1,}</td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td>匹配前一项0次或多次，等价于{0,}</td>
+  </tr>
+</table>
+### 贪婪和非贪婪
+贪婪和非贪婪只作用于量词，默认是贪婪，如果在量词后面紧跟一个"+"，则表示非贪婪；
+### 选择、分组和引用
+<table>
+  <tr>
+    <td>字符</td>
+    <td>含义</td>
+  </tr>
+  <tr>
+    <td>|</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>(...)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>(?:...)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>\n</td>
+    <td></td>
+  </tr>
+</table>
+### 指定匹配位置、断言
+<table>
+  <tr>
+    <td>字符</td>
+    <td>含义</td>
+  </tr>
+  <tr>
+    <td>^</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>$</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>\b</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>\B</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>(?=p)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>(?!p)</td>
+    <td></td>
+  </tr>
+</table>
+### 修饰符
+<table>
+  <tr>
+    <td>字符</td>
+    <td>含义</td>
+  </tr>
+  <tr>
+    <td>i</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>g</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>m</td>
+    <td></td>
+  </tr>
+</table>
+# 方法
