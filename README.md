@@ -51,6 +51,21 @@
     <td>控制字符^X，例如\cJ等价于换行符\n</td>
   </tr>
 </table>
+#### 字符集
+<table>
+  <tr>
+    <td>字符</td>
+    <td>匹配</td>
+  </tr>
+  <tr>
+    <td>[...](重要)</td>
+    <td>方括号内的任意字符</td>
+  </tr>
+  <tr>
+    <td>[^...](重要)</td>
+    <td>不在方括号内的任意字符</td>
+  </tr>
+</table>
 ### 字符类
 <table>
   <tr>
@@ -58,31 +73,31 @@
     <td>匹配</td>
   </tr>
   <tr>
-    <td>.</td>
+    <td>.(重要)</td>
     <td>除换行符和其他Unicode行终止符之外的任意字符</td>
   </tr>
   <tr>
-    <td>\w</td>
+    <td>\w(重要)</td>
     <td>任何ASCII字符组成的单词，等价于[a-zA-Z0-9_]</td>
   </tr>
   <tr>
-    <td>\W</td>
+    <td>\W(重要)</td>
     <td>任何不是ASCII字符组成的单词，等价于[^a-zA-Z0-9_]</td>
   </tr>
   <tr>
-    <td>\s</td>
+    <td>\s(重要)</td>
     <td>任何Unicode空白符</td>
   </tr>
   <tr>
-    <td>\S</td>
+    <td>\S(重要)</td>
     <td>任何非Unicode空白符的字符，注意\w和\S不同</td>
   </tr>
   <tr>
-    <td>\d</td>
+    <td>\d(重要)</td>
     <td>任何ASCII数字，等价于[0-9]</td>
   </tr>
   <tr>
-    <td>\D</td>
+    <td>\D(重要)</td>
     <td>除了ASCII数字之外的任何字符，等价于[^0-9]</td>
   </tr>
   <tr>
@@ -90,5 +105,4 @@
     <td>退格直接量</td>
   </tr>
 </table>
-2. 字符集(character set)[xyz],[^xyz]
-2. 
+#
