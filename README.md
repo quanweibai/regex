@@ -1,4 +1,94 @@
 # regex
 1. 一般字符 a,b,c
-2. 特殊字符 \,^,$,*,+,?,.,(x),(?:x),x(?=y),x(?!y),x|y,{n},{n,m},[xyz],[^xyz],[\b],\b,\B,\cX,\d,\D,\f,\n,\r,
-  1. 字符集(character set)[xyz],[^xyz]
+2. 特殊字符 \,^,$,*,+,?,.,(x),(?:x),x(?=y),x(?!y),x|y,{n},{n,m},[xyz],[^xyz], 
+      [\b],\b,\B,\cX,\d,\D,\f,\n,\r,\s,\S,\t,\v,\w,\W,\n,\0,\xhh,\uhhhh,\u{hhhh}
+      
+
+### 直接量字符
+<table>
+  <tr>
+    <td>字符</td>
+    <td>匹配</td>
+  </tr>
+  <tr>
+    <td>字母和数字本身</td>
+    <td>自身</td>
+  </tr>
+  <tr>
+    <td>\0</td>
+    <td>NUL字符(\u0000)</td>
+  </tr>
+  <tr>
+    <td>\t</td>
+    <td>制表符(\u0009)</td>
+  </tr>
+  <tr>
+    <td>\n</td>
+    <td>换行符(\u000A)</td>
+  </tr>
+  <tr>
+    <td>\v</td>
+    <td>垂直制表符(\u000B)</td>
+  </tr>
+  <tr>
+    <td>\f</td>
+    <td>换页符(\u000C)</td>
+  </tr>
+  <tr>
+    <td>\r</td>
+    <td>回车符(\u000D)</td>
+  </tr>
+  <tr>
+    <td>\xnn</td>
+    <td>由十六进制数nn指定的拉丁字符，例如，\x0A等价于\n</td>
+  </tr>
+  <tr>
+    <td>\uxxxx</td>
+    <td>由十六进制数xxxx指定的Unicode字符，例如\u0009等价于\t</td>
+  </tr>
+  <tr>
+    <td>\cX</td>
+    <td>控制字符^X，例如\cJ等价于换行符\n</td>
+  </tr>
+</table>
+### 字符类
+<table>
+  <tr>
+    <td>字符</td>
+    <td>匹配</td>
+  </tr>
+  <tr>
+    <td>.</td>
+    <td>除换行符和其他Unicode行终止符之外的任意字符</td>
+  </tr>
+  <tr>
+    <td>\w</td>
+    <td>任何ASCII字符组成的单词，等价于[a-zA-Z0-9_]</td>
+  </tr>
+  <tr>
+    <td>\W</td>
+    <td>任何不是ASCII字符组成的单词，等价于[^a-zA-Z0-9_]</td>
+  </tr>
+  <tr>
+    <td>\s</td>
+    <td>任何Unicode空白符</td>
+  </tr>
+  <tr>
+    <td>\S</td>
+    <td>任何非Unicode空白符的字符，注意\w和\S不同</td>
+  </tr>
+  <tr>
+    <td>\d</td>
+    <td>任何ASCII数字，等价于[0-9]</td>
+  </tr>
+  <tr>
+    <td>\D</td>
+    <td>除了ASCII数字之外的任何字符，等价于[^0-9]</td>
+  </tr>
+  <tr>
+    <td>[\b]</td>
+    <td>退格直接量</td>
+  </tr>
+</table>
+2. 字符集(character set)[xyz],[^xyz]
+2. 
