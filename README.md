@@ -55,7 +55,7 @@
 "absab".match(/ab/)
 ```
 * 普通字符的匹配
-* 匹配了一次就会停止，如果想全局匹配怎么做？
+* 匹配了一次就会停止，如果想[全局匹配](#golbal)怎么做？
 #### 字符集
 <table>
   <tr>
@@ -124,7 +124,7 @@
 "hello\n\world".match(/.*/); 
 "hello_world 2016".match(/\w*/); 
 ```
-### 重复
+### 重复（量词）
 <table>
   <tr>
     <td>字符</td>
@@ -155,8 +155,20 @@
     <td>匹配前一项0次或多次，等价于{0,}</td>
   </tr>
 </table>
+* 默认是**贪婪**的，那么什么是**贪婪**，**非贪婪**
+* 量词匹配的是前面**前面紧跟着的部分**
+```
+"hello, world".match(/r?l/);
+"hello, world".match(/e?l?/);
+"hello, world".match(/\w*/);
+"helhelhel, world".match(/hel+/);
+"helhelhel, world".match(/(hel)+/);
+```
 ### 贪婪和非贪婪
-贪婪和非贪婪只作用于量词，默认是贪婪，如果在量词后面紧跟一个"+"，则表示非贪婪；
+贪婪和非贪婪只作用于量词，默认是贪婪，如果在量词后面紧跟一个"?"，则表示非贪婪；
+```
+"hello, world".match(/\w+/); "hello, world".match(/\w+?/);
+```
 ### 选择、分组和引用
 <table>
   <tr>
@@ -180,6 +192,12 @@
     <td>和第n个分组第一次匹配的字符相匹配 ，组是圆括号中的子表达式（也有可能是嵌套的），组索引是从左到右的左括号数，"(?:"形式的分组不编码</td>
   </tr>
 </table>
+* 量词匹配的是**前面紧跟的部分**，选择匹配匹配的是子表达式
+```
+"hello, world".match(/hello|world/);
+"hello, world".match(/world|hello/);
+""
+```
 ### 指定匹配位置、断言
 <table>
   <tr>
@@ -211,7 +229,7 @@
     <td>零宽负向先行断言，要求接下来的字符不与p匹配</td>
   </tr>
 </table>
-### 修饰符
+### <span id="global">修饰符</span>
 <table>
   <tr>
     <td>字符</td>
