@@ -1,5 +1,6 @@
 # [正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 [TOC]
+
 1. 一般字符 a,b,c
 2. 特殊字符 \,^,$,*,+,?,.,(x),(?:x),x(?=y),x(?!y),x|y,{n},{n,m},[xyz],[^xyz], 
       [\b],\b,\B,\cX,\d,\D,\f,\n,\r,\s,\S,\t,\v,\w,\W,\n,\0,\xhh,\uhhhh,\u{hhhh}
