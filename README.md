@@ -250,9 +250,16 @@
     <td>零宽负向先行断言，要求接下来的字符不与p匹配</td>
   </tr>
 </table>
-* 修饰符m可以改变^和$的含义，除了匹配行首和行尾
+* [修饰符m](#修饰符)可以改变^和$的含义，默认匹配字符串的开始和结尾，添加修饰符以后可以匹配行首和行尾
+* "零宽""正向""先行""断言"这几个词怎么理解？
 ```
 "hello, hello".match(/^hello/g);
+"hello\nhello".match(/^hello/g); "hello\nhello".match(/^hello/gm);
+"hello world".match(/\b\w+\b/g);
+
+"hello, world heLLO world".match(/llo/gi);
+"hello, world heLLO world".match(/llo(?= world)/gi); 
+"hello, world heLLO world".match(/llo(?! world)/gi); 
 ```
 ### 修饰符
 <table>
