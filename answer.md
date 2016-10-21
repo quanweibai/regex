@@ -52,4 +52,8 @@
 "hello, world heLLO world".match(/llo/gi);  ["llo", "LLO"]
 "hello, world heLLO world".match(/llo(?= world)/gi); ["LLO"]
 "hello, world heLLO world".match(/llo(?! world)/gi); ["llo"] 
+
+"1234567".replace(/(\d)(?=(\d{3})+)/g, "$1,");
+"1234567".replace(/(\d)(?=(\d{3})+$)/g, "$1,");
+"1234567".replace(/(?<=\d)(?=(\d{3})+$)/g, "$1,"); // 不支持
 ```
