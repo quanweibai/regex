@@ -51,6 +51,11 @@
     <td>控制字符^X，例如\cJ等价于换行符\n</td>
   </tr>
 </table>
+```
+"absab".match(/ab/)
+```
+* 普通字符的匹配
+* 匹配了一次就会停止，如果想全局匹配怎么做？
 #### 字符集
 <table>
   <tr>
@@ -66,6 +71,15 @@
     <td>不在方括号内的任意字符</td>
   </tr>
 </table>
+* 表示范围用"-"，只有当-紧跟在[之后时，才表示"-"自身
+* 字符集内的元字符和正则表达式的元字符不一样
+```
+"abs1".match(/[ab]/);
+"hello, world".match(/[a-z]+/);
+"2016, hello-world".match(/[-a-z]+/);
+"2016, hello.world".match(/[.]+/); "2016, hello.world".match(/.+/);
+"2016, hello.world".match(/[^0-9a-z]/);
+```
 ### 字符类
 <table>
   <tr>
@@ -74,7 +88,7 @@
   </tr>
   <tr>
     <td>.</td>
-    <td>除换行符和其他Unicode行终止符之外的任意字符</td>
+    <td>除**换行符和其他Unicode行终止符**之外的任意字符</td>
   </tr>
   <tr>
     <td>\w</td>
@@ -105,6 +119,11 @@
     <td>退格直接量</td>
   </tr>
 </table>
+* 大写表示小写的**反义**,\w(word),\s(space),\d(digit)
+```
+"hello\n\world".match(/.*/); 
+"hello_world 2016".match(/\w*/); 
+```
 ### 重复
 <table>
   <tr>
