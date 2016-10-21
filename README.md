@@ -1,13 +1,27 @@
 # [正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-### 目录
-
-[TOC]
+正则表达式
+  [直接量字符](#直接量字符)
+  [字符集](#字符集)
+  [字符类](#字符类)
+  [重复（量词）](#重复（量词）)
+  [贪婪和非贪婪](#贪婪和非贪婪)
+  [选择、分组和引用](#选择、分组和引用)
+  [指定匹配位置、断言](#指定匹配位置、断言)
+正则表达式相关方法
+  字符串的方法
+    search()
+    match()
+    replace()
+    split()
+  正则表达式的方法
+    创建正则表达式
+    test()
+    exec()
 
 1. 一般字符 a,b,c
 2. 特殊字符 \,^,$,*,+,?,.,(x),(?:x),x(?=y),x(?!y),x|y,{n},{n,m},[xyz],[^xyz], 
       [\b],\b,\B,\cX,\d,\D,\f,\n,\r,\s,\S,\t,\v,\w,\W,\n,\0,\xhh,\uhhhh,\u{hhhh}
       
-# regex
 ### 直接量字符
 <table>
   <tr>
@@ -32,7 +46,7 @@
   </tr>
   <tr>
     <td>\v(不重要)</td>
-    <td>垂直制表符(\u000B)</td>
+    <td>垂直制表符(\u000B)</td>  
   </tr>
   <tr>
     <td>\f(不重要)</td>
