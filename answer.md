@@ -19,3 +19,17 @@
 "helhelhel, world".match(/(hel)+/); ["helhelhel", "hel"]
 ### 贪婪和非贪婪
 "hello, world".match(/\w+/); "hello, world".match(/\w+?/); ["hello"] ["h"]
+### 选择、分组和引用
+"hello, world".match(/hello|world/); "hello, world".match(/world|hello/); ["hello"]
+"hello, world".match(/world|hello/g); ["hello", "world"];
+"12345678".match(/\d{3}|\d{2}/g); ["123", "456", "78"];
+"12345678".match(/\d{2}|\d{3}/g); ["12", "34", "56", "78"];
+"hello, world".match(/(\w)+,\s(\w)+/); ["hello, world", "o", "d"];
+"hello, world".match(/(?:\w)+,\s(?:\w)+/); ["hello, world"];
+"hello, hello".match(/(\w+), \1/); ["hello, hello", "hello"];
+"hello, hello, world, world".match(/(\w+), \1, (\w+), \2/); ["hello, hello, world, world", "hello", "world"]
+"hhhhaacc".match(/(\w)+\1/); ["hhhhaacc", "c"]
+"hhhhaacc".match(/(\w)+?\1/); ["hh", "h"]
+"hello=\"abs\"".match(/[^"']\*(["'])([^"']\*)\1/) ["hello="abs"", """, "abs"]
+### 指定匹配位置、断言
+"hello, hello".match(/^hello/g); ["hello"]
