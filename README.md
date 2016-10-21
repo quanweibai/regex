@@ -358,3 +358,24 @@ var str = 'John Smith';
 var newstr = str.replace(re, '$2, $1');
 console.log(newstr);
 ```
+#### split()
+```
+str.split([separator[, limit]])
+```
+* 参数可以是正则表达式
+```
+"1  ,  2, 3, 4, 5 ,6".split(/\s*,\s*/); 
+```
+### [正则表达式的方法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+#### 创建正则表达式
+* //
+* new RegExp()
+#### test()
+* 存在匹配返回true，否则返回false
+
+#### exec()
+```
+regexObj.exec(str)
+```
+* 不存在返回null
+* [例子](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec)
