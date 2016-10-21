@@ -251,7 +251,8 @@
   </tr>
 </table>
 * [修饰符m](#修饰符)可以改变^和$的含义，默认匹配字符串的开始和结尾，添加修饰符以后可以匹配行首和行尾
-* "零宽""正向""先行""断言"这几个词怎么理解？
+* "零宽""正向""先行""断言"这几个词怎么理解？(?<=p)(?<!p)
+* "1234567" => "1,234,567"怎么实现？暂不考虑小数
 ```
 "hello, hello".match(/^hello/g);
 "hello\nhello".match(/^hello/g); "hello\nhello".match(/^hello/gm);
@@ -280,4 +281,80 @@
     <td>多行匹配模式，^匹配一行的开头和字符串的开头，$匹配行的结束和字符串的结束</td>
   </tr>
 </table>
-# 方法
+# 正则表达式相关方法
+### [字符串的方法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+#### search()
+```
+str.search(regexp)
+```
+* 如果没有匹配返回-1，如果有返回第一次匹配的位置
+* 会忽略修饰符g
+```
+"JavaScript".search(/script/i);
+"JavaScript".search(/script/ig);
+```
+#### match()
+```
+str.match(regexp)
+```
+* 如果没有匹配返回null；如果使用了修饰符g，返回包含所有匹配结果的数组，如果没有使用修饰符g，返回一个数组，数组的第一个元素是匹配的字符串，余下的元素是正则表达式中用院落好括起来的子表达式
+#### replace()
+```
+str.replace(regexp|substr, newSubStr|function)
+```
+如果第二个参数是字符串，该字符串可以包含的特殊字符如下：
+<table>
+  <tr>
+    <td>模式</td>
+    <td>含义</td>
+  </tr>
+  <tr>
+    <td>$$</td>
+    <td>$本身</td>
+  </tr>
+  <tr>
+    <td>$&</td>
+    <td>匹配的字符串</td>
+  </tr>
+  <tr>
+    <td>$`</td>
+    <td>匹配字符串前面的部分</td>
+  </tr>
+  <tr>
+    <td>$'</td>
+    <td>匹配字符串后面的部分</td>
+  </tr>
+  <tr>
+    <td>$n</td>
+    <td>匹配第n个捕获型字符串的内容</td>
+  </tr>
+</table>
+如果第二个参数是函数，该函数的参数如下：
+<table>
+  <tr>
+    <td>可能的名字</td>
+    <td>含义</td>
+  </tr>
+  <tr>
+    <td>match</td>
+    <td>匹配的字符串，相当于上面的$&</td>
+  </tr>
+  <tr>
+    <td>p1, p2, ...</td>
+    <td>对应上面的$1,$2,...</td>
+  </tr>
+  <tr>
+    <td>offset</td>
+    <td>匹配的字符串在整个字符串中的位置</td>
+  </tr>
+  <tr>
+    <td>string</td>
+    <td>整个字符串</td>
+  </tr>
+</table>
+```
+var re = /(\w+)\s(\w+)/;
+var str = 'John Smith';
+var newstr = str.replace(re, '$2, $1');
+console.log(newstr);
+```
