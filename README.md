@@ -71,6 +71,7 @@
 ```
 * 普通字符的匹配
 * 匹配了一次就会停止，如果想[全局匹配](#修饰符)怎么做？
+
 ### 字符集
 <table>
   <tr>
@@ -316,6 +317,7 @@ str.search(regexp)
 str.match(regexp)
 ```
 * 如果没有匹配返回null；如果使用了修饰符g，返回包含所有匹配结果的数组，如果没有使用修饰符g，返回一个数组，数组的第一个元素是匹配的字符串，余下的元素是正则表达式中用院落好括起来的子表达式
+
 #### replace()
 ```
 str.replace(regexp|substr, newSubStr|function)
@@ -398,6 +400,7 @@ str.split([separator[, limit]])
 #### 创建正则表达式
 * //
 * new RegExp()
+
 #### test()
 * 存在匹配返回true，否则返回false
 * 会改变正则对象的lastIndex值
