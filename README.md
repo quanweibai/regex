@@ -1,4 +1,4 @@
-# regex
+# [regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 1. 一般字符 a,b,c
 2. 特殊字符 \,^,$,*,+,?,.,(x),(?:x),x(?=y),x(?!y),x|y,{n},{n,m},[xyz],[^xyz], 
       [\b],\b,\B,\cX,\d,\D,\f,\n,\r,\s,\S,\t,\v,\w,\W,\n,\0,\xhh,\uhhhh,\u{hhhh}
@@ -251,12 +251,15 @@
   </tr>
 </table>
 * [修饰符m](#修饰符)可以改变^和$的含义，默认匹配字符串的开始和结尾，添加修饰符以后可以匹配行首和行尾
+* \b具体匹配哪些字符？[a-zA-Z0-9\_]
 * "零宽""正向""先行""断言"这几个词怎么理解？(?<=p)(?<!p)
 * "1234567" => "1,234,567"怎么实现？暂不考虑小数
 ```
 "hello, hello".match(/^hello/g);
 "hello\nhello".match(/^hello/g); "hello\nhello".match(/^hello/gm);
 "hello world".match(/\b\w+\b/g);
+
+"ab cs 11,44;dd0;p".match(/\b\w+\b/g);
 
 "hello, world heLLO world".match(/llo/gi);
 "hello, world heLLO world".match(/llo(?= world)/gi); 
@@ -357,6 +360,16 @@ var re = /(\w+)\s(\w+)/;
 var str = 'John Smith';
 var newstr = str.replace(re, '$2, $1');
 console.log(newstr);
+
+function replace(str, array) {
+  var index = 0;
+  return str.replace(reg, function() {
+    return array[index++];
+  });
+}
+var str = "您输入的数值是：%, %, %";
+var reg = /%/g;
+replace(str, [20, 30, 40]);
 ```
 #### split()
 ```
@@ -372,6 +385,7 @@ str.split([separator[, limit]])
 * new RegExp()
 #### test()
 * 存在匹配返回true，否则返回false
+* 会改变正则对象的lastIndex值
 
 #### exec()
 ```
